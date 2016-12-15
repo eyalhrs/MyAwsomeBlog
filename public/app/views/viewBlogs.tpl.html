@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<html>
+
+    <div ng-app="myBlogApp" ng-controller="blogViewController">
+        <br>
+        <label><b>Search blogs</b></b></label><br><br>
+        <label>By Title: </label><input ng-model="search.title" />
+        <br>
+        <label>By Text: </label><input  ng-model="search.text" />
+        <br><br>
+        <label><b>Blogs</b></label><br><br>
+        <table style="width:100%" >
+        <tr>
+            <th>Title</th>
+            <th>Text</th>
+        </tr>
+        <tr ng-repeat="blog in blogs | filter:search">
+            <td width="10">{{blog.title}}</td>
+            <td>{{blog.text}}</td>
+        </tr>
+    </table>
+    </div>
+
+
+</html>
