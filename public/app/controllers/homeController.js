@@ -1,4 +1,5 @@
 angular.module('myBlogApp').controller('homeController', ['$scope','$location','authService', function($scope,$location,authService) {
+    $scope.currentUser = authService.getCurrentUser();
     $scope.currentMenu = "viewBlogs";
     $scope.switchTo = function (menu) {
         switch (menu) {

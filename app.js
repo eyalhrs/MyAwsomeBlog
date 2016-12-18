@@ -12,7 +12,6 @@ passportSetup.appSetup(app,passport);
 passportSetup.passSetup(app,passport);
 
 require('./routes/login')(app,passport);
-require('./routes/users')(app);
 require('./routes/register')(app);
 require('./routes/blog')(app);
 

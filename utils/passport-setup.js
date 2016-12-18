@@ -33,10 +33,8 @@ module.exports = function () {
 
             userDal.get(name, password,function (result) {
                 if (result) {
-                    console.log('Login success');
                     done(result,'Login success');
                 } else {
-                    console.log('Login failed');
                     done(false, 'Login failed');
                 }
             });

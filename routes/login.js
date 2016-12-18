@@ -1,7 +1,7 @@
 module.exports = function(app,passport) {
    // route to test if the user is logged in or not
     app.get('/loggedin', function(req, res) {
-      res.send(req.isAuthenticated() ? true : false);
+      res.send(req.isAuthenticated() ? req.user.name : false);
    });
     // route to log in
     app.post('/login',  function(req, res, next) {
@@ -14,7 +14,6 @@ module.exports = function(app,passport) {
                     return next(err);
                 }
 
-                console.log('login succeeded!');
                 return res.send(200);
             });
         })(req, res, next);

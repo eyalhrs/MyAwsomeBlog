@@ -5,7 +5,6 @@ module.exports = function(app) {
             if (result) {
                 req.login(result, function(err) {
                     if (err) {
-                        console.log(err);
                         return res.send(500);
                     }
                     return res.send(200);
