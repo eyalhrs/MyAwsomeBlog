@@ -1,8 +1,5 @@
-"use strict";
-
 module.exports = function () {
     var express = require('express'),
-        flash = require('connect-flash'),
         LocalStrategy = require('passport-local').Strategy,
         cookieParser = require('cookie-parser'),
         cookieSession = require('cookie-session'),
@@ -52,15 +49,9 @@ module.exports = function () {
         app.use(bodyParser.urlencoded({limit : '50mb', extended: true }));
         app.use(bodyParser.json());
 
-        app.use(flash());
-
         app.use(cookieSession({
             key: 'value',
             secret: 'keyboard cat and then dawg, yo',
-            cookie: {
-                // domain: getDomain()
-                //, maxAge: 1000 * 60 * 24
-            }
         }));
 
         app.use(passport.initialize());
@@ -69,9 +60,7 @@ module.exports = function () {
 
 
     return {
-        // getPort : getPort,
         passSetup : passSetup,
-        // setupErrorHandling : setupErrorHandling,
         appSetup : appSetup
     }
 }

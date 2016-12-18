@@ -5,6 +5,7 @@ angular.module('myBlogApp').controller('blogViewController', ['$scope','$locatio
                     $scope.blogs = response.data;
                 }
             }, function(err){
+                $scope.blogs = [];
             });
         };
         init();

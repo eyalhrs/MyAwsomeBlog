@@ -15,14 +15,5 @@ angular.module('myBlogApp').controller('blogController', ['$scope','$location','
                 $scope.msg = "An error occurred while creating blog";
             });
         };
-        $scope.get = function () {
-            blogService.get().then(function(response){
-                if (response === 200) {
-                    console.log(response);
-                } else {
-                }
-            }, function(err){
-            });
-        };
 
 }]);

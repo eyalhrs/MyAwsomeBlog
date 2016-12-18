@@ -7,6 +7,7 @@ angular.module('myBlogApp').service('authService', ['$http', function($http){
             currentUser = name;
             return response.status;
         }, function(response) {
+            currentUser = "";
             return response.status;
         });
     };
@@ -14,6 +15,8 @@ angular.module('myBlogApp').service('authService', ['$http', function($http){
         return $http.get('/loggedin').then(function(response){
             if (response.data !== false) {
                 currentUser = response.data;
+            } else {
+                currentUser = "";
             }
             return response;
         }, function(response) {
@@ -26,6 +29,7 @@ angular.module('myBlogApp').service('authService', ['$http', function($http){
             currentUser = "";
             return response.status;
         }, function(response) {
+            currentUser = "";
             return response.status;
         });
     };
@@ -34,6 +38,7 @@ angular.module('myBlogApp').service('authService', ['$http', function($http){
             currentUser = name;
             return response.status;
         }, function(response) {
+            currentUser = "";
             return response.status;
         });
     };

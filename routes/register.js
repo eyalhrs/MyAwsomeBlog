@@ -5,12 +5,12 @@ module.exports = function(app) {
             if (result) {
                 req.login(result, function(err) {
                     if (err) {
-                        return res.send(500);
+                        return res.sendStatus(500);
                     }
-                    return res.send(200);
+                    return res.sendStatus(200);
                 });
             } else {
-                return res.send(500);
+                return res.sendStatus(500);
             }
         });
     });
